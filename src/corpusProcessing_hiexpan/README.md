@@ -2,7 +2,7 @@
 
 This folder contains scripts to generate input files for subsequent dataProcessing pipeline.
 
-First, you need to have [SpaCy](https://spacy.io/usage/) installed:
+First, you need to have [SpaCy v2.x](https://spacy.io/usage/) installed:
 
 ```
 $ pip3 install -U spacy

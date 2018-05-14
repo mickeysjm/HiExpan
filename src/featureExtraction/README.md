@@ -15,14 +15,14 @@ Finally, you can run the feature extraction pipeline using either local Probase 
 Run pipeline using remote Probase API:
 
 ```
-$ chomod +x ./main.sh
+$ chmod +x ./main.sh
 $ ./main.sh $corpus_name $num_thread_for_linking remote_API $num_thread_for_word2vec
 ```
 
 Run pipeline using local Probase dump:
 
 ```
-$ chomod +x ./main.sh
+$ chmod +x ./main.sh
 $ ./main.sh $corpus_name -1 ../../KB/data-concept-instance-relations.txt $num_thread_for_word2vec
 ```
 ### Example usage

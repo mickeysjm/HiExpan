@@ -6,6 +6,12 @@ LANGUAGE=EN
 MIN_SUP=10
 THREAD=$2
 
+green=`tput setaf 2`
+reset=`tput sgr0`
+echo ${green}==='Corpus Name:' $DATA===${reset}
+echo ${green}==='Current Path:' $path===${reset}
+
+
 ### Following clean the raw input data from corpus.txt -> corpus.clean.txt
 echo ${green}===Cleaning input corpus===${reset}
 python3 parseCorpus.py $DATA
@@ -18,11 +24,6 @@ QUALITY_WIKI_ENTITIES=data/EN/wiki_quality.txt
 HIGHLIGHT_MULTI=${HIGHLIGHT_MULTI:- 0.5}
 HIGHLIGHT_SINGLE=${HIGHLIGHT_SINGLE:- 0.9}
 
-green=`tput setaf 2`
-reset=`tput sgr0`
-
-echo ${green}==='Corpus Name:' $DATA===${reset}
-echo ${green}==='Current Path:' $path===${reset}
 
 echo ${green}===Running AutoPhrase===${reset}
 cd ../tools/AutoPhrase
@@ -47,8 +48,11 @@ echo ${green}===Running NLP Feature Extraction===${reset}
 export OMP_NUM_THREADS=1
 split --number=l/$THREAD ../../data/$DATA/intermediate/segmentation.txt ../../data/$DATA/intermediate/subcorpus-
 python3 multiprocess_annotateNLPFeature.py $DATA $THREAD
-cat ../../data/$DATA/intermediate/sentences.json-* > ../../data/$DATA/intermediate/sentences.json
+cat ../../data/$DATA/intermediate/sentences.json-* > ../../data/$DATA/intermediate/sentences.json.raw
 
 echo ${green}===Clean unnecessary files===${reset}
 rm ../../data/$DATA/intermediate/subcorpus-*
 rm ../../data/$DATA/intermediate/sentences.json-*
+
+echo ${green}===Key Term Extraction===${reset}
+python3 keyTermExtraction.py $DATA

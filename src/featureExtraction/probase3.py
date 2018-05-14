@@ -12,16 +12,18 @@ import mmap
 import ssl
 from tqdm import tqdm
 from collections import defaultdict
+import re
 
 FLAGS_DEBUG=False
 
-def get_phrases(json_file):
+def get_phrases(phrase_file):
     phrases = set()
-    with open(json_file, "r") as f:
-        for line in tqdm(f, total=get_num_lines(json_file), desc="Loading sentences.json.raw"):
-            ems = json.loads(line.strip('\r\n'))['entityMentions']
-            for em in ems:
-                phrases.add(em['text'].lower())
+    with open(phrase_file, "r") as f:
+        for line in tqdm(f, total=get_num_lines(phrase_file), desc="Loading entity2id.txt"):
+            line = line.strip()
+            if line:
+                entity = re.sub("_", " ", line.split("\t")[0])
+                phrases.add(entity)
 
     print('Finish obtaining {} phrases, ready for entity linking'.format(len(phrases)))
     return phrases
@@ -184,7 +186,8 @@ class KnowledgeBase(object):
         
         with open(filepath, "r") as fin:
             eid_count = 0
-            for cnt, line in tqdm(enumerate(fin), total=self._get_num_lines(filepath), desc="Loading Probase"):
+            for cnt, line in tqdm(enumerate(fin), total=self._get_num_lines(filepath),
+                                  desc="Loading Probase (need ~= 15GB memory)"):
                 line = line.strip()
                 if not line:
                     continue
@@ -238,9 +241,14 @@ class KnowledgeBase(object):
     def get_probase(self, phrases, topK=10, save=True, save_file=None):
         print("Linking by using local Probase dump, {} phrases".format(len(phrases)))
         res = {}
+        linkable = 0
         for phrase in tqdm(phrases):
-            res[phrase] = self.linking(phrase, topK)
+            linked_types = self.linking(phrase, topK)
+            res[phrase] = linked_types
+            if linked_types:
+                linkable += 1
 
+        print("Number of linkable phrases = {} ({}).".format(linkable, 1.0 * linkable / len(phrases) ))
         if save:
             self.save_to_file(res, self.corpusName + "-probase_local.p")
             self.cache = res
@@ -251,9 +259,9 @@ if __name__ == "__main__":
     corpusName = sys.argv[1]
     num_workers = int(sys.argv[2])
     kb_path = sys.argv[3]
-    json_file = "../../data/"+corpusName+"/intermediate/sentences.json.raw"  # sentence.json.raw
-    save_file = "../../data/"+corpusName+"/intermediate/linked_results.txt"
-    phrases = get_phrases(json_file)
+    phrase_file = "../../data/"+corpusName+"/intermediate/entity2id.txt"  # entity2id.txt
+    save_file = "../../data/"+corpusName+"/intermediate/linked_results.txt"  # linked results
+    phrases = get_phrases(phrase_file)
 
     start = time.time()
     if num_workers != -1:

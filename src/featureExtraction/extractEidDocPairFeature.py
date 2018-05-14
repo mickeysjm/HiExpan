@@ -35,7 +35,7 @@ if __name__ == "__main__":
   articeID2eidlist = defaultdict(list)
   eid2freq = defaultdict(int)
   with open(infilename, 'r') as fin:
-    for line in tqdm(fin, total=get_num_lines(infilename), desc="Generate document-level coocurrence features"):
+    for line in tqdm(fin, total=get_num_lines(infilename), desc="Generate document-level cooccurrence features (pass 1)"):
       sentInfo = json.loads(line)
       articleId = sentInfo['articleId']
       eidlist = [em['entityId'] for em in sentInfo['entityMentions']]
@@ -47,7 +47,7 @@ if __name__ == "__main__":
   eidPair2count = defaultdict(int)
   eidTotalCount = 0
   eidPairTotalCount = 0
-  for articleId in articeID2eidlist:
+  for articleId in tqdm(articeID2eidlist, desc="Generate document-level coocurrence features (pass 2)"):
     eidlist = articeID2eidlist[articleId]
     eidTotalCount += len(eidlist)
     for pair in itertools.combinations(eidlist,2):

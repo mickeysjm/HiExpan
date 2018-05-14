@@ -35,7 +35,11 @@ if __name__ == "__main__":
       if len(seg) <= 1:
         continue
       entity = seg[0].lower()
-      eid = ent2eidMap[entity]
+      if entity not in ent2eidMap:
+        print("[WARNING] No id entity: {}".format(entity))
+        continue
+      else:
+        eid = ent2eidMap[entity]
       types = eval(seg[1])
       for tup in types:
         t = tup[0]

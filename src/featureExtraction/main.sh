@@ -14,7 +14,7 @@ KB_PATH=$3
 EMBEDDING_METHOD=word2vec
 
 ## Number of threads used to learn word2vec embedding
-EMBED_LEARNING_THREAD=8
+EMBED_LEARNING_THREAD=$4
 
 green=`tput setaf 2`
 reset=`tput sgr0`
@@ -22,12 +22,12 @@ echo ${green}==='Corpus Name:' $DATA===${reset}
 echo ${green}==='Current Path:' $path===${reset}
 
 
-if [ ! -d ../../data/$data/intermediate ]; then
-	mkdir ../../data/$data/intermediate
+if [ ! -d ../../data/$DATA/intermediate ]; then
+	mkdir ../../data/$DATA/intermediate
 fi
 
-if [ ! -d ../../data/$data/results ]; then
-	mkdir ../../data/$data/results
+if [ ! -d ../../data/$DATA/results ]; then
+	mkdir ../../data/$DATA/results
 fi
 
 

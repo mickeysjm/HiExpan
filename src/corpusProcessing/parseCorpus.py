@@ -26,7 +26,7 @@ with open(inputFileName) as fin, open(outputFileName, 'w') as f_corpus:
         # doc = re.sub(r"([.,!:?()])", r" \1 ", doc)
 
         # replace multiple continuous whitespace with a single whitespace
-        doc = re.sub(r"\s{2,}", "", doc)
+        doc = re.sub(r"\s{2,}", " ", doc)
         if not doc:
             doc = "EMPTY_DOC_PLACEHOLDER"
         f_corpus.write(doc+'\n')

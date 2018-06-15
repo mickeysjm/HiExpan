@@ -30,8 +30,8 @@ You need to first transform the raw text corpus into a standard JSON format and 
 ```
 data/$DATA
 └── intermediate
-    └── sentences.json
-	└── entity2id.txt
+	└── sentences.json
+	└── entity2id.txt	
 ```
 
 Based on these two files, feature extraction pipeline will output all the needed feature files for HiExpan model.

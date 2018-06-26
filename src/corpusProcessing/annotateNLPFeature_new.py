@@ -162,7 +162,7 @@ def process_one_doc(article, articleId):
                     start_offset = np.start + offset - sent_offset
                     ent = {"text": " ".join(p_tokens), "start": start_offset,
                            # "end": start_offset + len(p.split(" ")) - 1,
-                        "end": start_offset + len(p_tokens) - 1, "type": "phrase"}
+                           "end": start_offset + len(p_tokens) - 1, "type": "phrase"}
 
                     # sanity check
                     if ent["text"] != " ".join(tokens[ent["start"]:ent["end"] + 1]):
@@ -170,11 +170,13 @@ def process_one_doc(article, articleId):
                         print("SENT", " ".join(tokens))
                         print("SENT2", sent.text)
 
+                    ## TODO: check why there are duplicates in entityMentions
                     entityMentions.append(ent)
 
         res = {"articleId": articleId, "sentId": sentId, "tokens": tokens, "pos": pos, "lemma": lemmas, "dep": deps,
-            "entityMentions": entityMentions,
-            "np_chunks": [{"text": t.text, "start": t.start - sent.start, "end": t.end - sent.start - 1} for t in NPs]}
+               "entityMentions": entityMentions,
+               "np_chunks": [{"text": t.text, "start": t.start - sent.start, "end": t.end - sent.start - 1} for t in
+                             NPs]}
         result.append(res)
         sentId += 1
 

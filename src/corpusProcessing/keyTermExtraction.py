@@ -10,6 +10,7 @@ import sys
 import mmap
 from tqdm import tqdm
 
+
 def get_num_lines(file_path):
     fp = open(file_path, "r+")
     buf = mmap.mmap(fp.fileno(), 0)
@@ -17,6 +18,20 @@ def get_num_lines(file_path):
     while buf.readline():
         lines += 1
     return lines
+
+
+def deduplicate(ems):
+    """Remove duplicates in entity mention list
+
+    ems: a dictionary
+    return: a dictionary without duplicates
+    """
+    uniques = set([(em['entityId'], em['start'], em['end'], em['text'], em['type']) for em in ems])
+    res = []
+    for ele in uniques:
+        res.append({'entityId': ele[0], 'start': ele[1], 'end': ele[2], 'text': ele[3], 'type': ele[4]})
+    return res
+
 
 def main(corpusName):
     inputFile = '../../data/'+corpusName+'/intermediate/sentences.json.raw'
@@ -39,6 +54,8 @@ def main(corpusName):
             ems_new = []
             for mention in sentence["entityMentions"]:
                 entity = mention["text"].lower()
+                if entity == "":  # this can happen because AutoPhrase returns <phrase></phrase>
+                    continue
                 lemma_signature = "_".join(lemma_list[mention["start"]:mention["end"]+1])
 
                 if lemma_signature not in entity2id:  # a new "entity"
@@ -51,6 +68,9 @@ def main(corpusName):
 
                 mention["entityId"] = entity2id[lemma_signature]
                 ems_new.append(mention)
+
+            # remove duplicates in ems_new
+            ems_new = deduplicate(ems_new)
 
             sentence["entityMentions"] = ems_new
             fout.write(json.dumps(sentence)+"\n")
@@ -66,6 +86,7 @@ def main(corpusName):
     with open(outputEntity2FreqFile, "w") as fout:
         for ele in sorted(entity2freq.items(), key=lambda x: x[0]):
             fout.write("{}\t{}\n".format(ele[0], ele[1]))
+
 
 if __name__ == '__main__':
     corpusName = sys.argv[1]

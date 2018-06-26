@@ -9,6 +9,7 @@ import sys
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
+
 def get_num_lines(file_path):
     fp = open(file_path, "r+")
     buf = mmap.mmap(fp.fileno(), 0)
@@ -30,14 +31,13 @@ def minDuplicate(intervals):
     s = e = 0
     numDuplicate = available = 0
     while s < len(starts):
-        if starts[s] <= ends[e]:
-            if available == 0:
+        if starts[s] <= ends[e]:  # when an entity span starts, the previous entity span does not end
+            if available == 0:   # if an available sentence sequence doesn't exit
                 numDuplicate += 1
             else:
                 available -= 1
-
             s += 1
-        else:
+        else:  # a new entity span starts after the previous entity span ends
             available += 1
             e += 1
 

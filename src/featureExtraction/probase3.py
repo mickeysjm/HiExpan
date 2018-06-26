@@ -17,13 +17,15 @@ import re
 FLAGS_DEBUG=False
 
 def get_phrases(phrase_file):
-    phrases = set()
+    phrases = []
     with open(phrase_file, "r") as f:
-        for line in tqdm(f, total=get_num_lines(phrase_file), desc="Loading entity2id.txt"):
-            line = line.strip()
+        for line_id, line in tqdm(enumerate(f), total=get_num_lines(phrase_file), desc="Loading entity2id.txt"):
+            line = line.rstrip()
             if line:
-                entity = re.sub("_", " ", line.split("\t")[0])
-                phrases.add(entity)
+                entity= re.sub("_", " ", line.split("\t")[0])
+                phrases.append(entity)
+            else:
+                print("[WARNING] wrong line id: {}".format(line_id))
 
     print('Finish obtaining {} phrases, ready for entity linking'.format(len(phrases)))
     return phrases
@@ -156,7 +158,7 @@ class ProbaseReference:
 
 
 class KnowledgeBase(object):
-    """A class for Probase Linker using local KB dump, requires ~= 15GB memory for runing """
+    """A class for Probase Linker using local KB dump, requires ~= 15GB memory for running """
     def __init__(self, corpusName, filepath=""):
         self.corpusName = corpusName
         self.entity2id = {}

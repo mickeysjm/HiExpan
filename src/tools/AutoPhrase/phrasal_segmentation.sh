@@ -8,7 +8,7 @@ THREAD=${THREAD:- $5}
 SEGMENTATION_MODEL=${MODEL}/segmentation.model
 TOKEN_MAPPING=${MODEL}/token_mapping.txt
 
-ENABLE_POS_TAGGING=1
+ENABLE_POS_TAGGING=0
 
 green=`tput setaf 2`
 reset=`tput sgr0`

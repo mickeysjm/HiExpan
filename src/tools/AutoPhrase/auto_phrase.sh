@@ -7,7 +7,7 @@ RAW_TRAIN=${RAW_TRAIN:- $2}
 FIRST_RUN=${FIRST_RUN:- 1}
 # When ENABLE_POS_TAGGING is set to 1, AutoPhrase will utilize the POS tagging in the phrase mining. 
 # Otherwise, a simple length penalty mode as the same as SegPhrase will be used.
-ENABLE_POS_TAGGING=${ENABLE_POS_TAGGING:- 1}
+ENABLE_POS_TAGGING=${ENABLE_POS_TAGGING:- 0}
 # A hard threshold of raw frequency is specified for frequent phrase mining, which will generate a candidate set.
 MIN_SUP=${MIN_SUP:- $3}
 # The KB used to generate seed supervisions

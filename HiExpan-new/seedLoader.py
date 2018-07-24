@@ -16,30 +16,30 @@ Note:
 def load_seeds(corpusName):
     if corpusName == "wiki":
         userInput = [
-            ["ROOT", -1, ["united states", "china", "canada"]],
-            ["united states", 0, ["california", "illinois", "florida"]],
+            ["ROOT", -1, ["united_states", "china", "canada"]],
+            ["united_states", 0, ["california", "illinois", "florida"]],
             ["china", 0, ["shandong", "zhejiang", "sichuan"]],
         ]
     elif corpusName == "dblp":
         userInput = [
-            ["ROOT", -1, ["machine learning", "data mining", "natural language processing", "information retrieval", "wireless networks"]],
-            ["data mining", 0, ["association rule mining", "text mining", "outlier detection"]],
-            ["machine learning", 0, ["support vector machines", "decision trees", "neural networks"]],
-            ["natural language processing", 0, ["named entity recognition", "information extraction", "machine translation"]],
+            ["ROOT", -1, ["machine_learning", "data_mining", "natural_language_processing", "information_retrieval", "wireless_networks"]],
+            ["data_mining", 0, ["association_rule_mining", "text_mining", "outlier_detection"]],
+            ["machine_learning", 0, ["support_vector_machines", "decision_trees", "neural_networks"]],
+            ["natural_language_processing", 0, ["named_entity_recognition", "information_extraction", "machine_translation"]],
         ]
     elif corpusName == "cvd":
         userInput = [
-            ["ROOT", -1, ["cardiovascular abnormalities", "vascular diseases", "heart-disease"]],
-            ["cardiovascular abnormalities", 0, ["turner syndrome", "tetralogy of fallot", "noonan syndrome"]],
-            ["vascular diseases", 0, ["arteriovenous malformations", "high-blood pressure", "arterial occlusions"]],
-            ["heart-disease", 0, ["aortic-valve stenosis", "cardiac arrests", "carcinoid heart disease"]],
+            ["ROOT", -1, ["cardiovascular_abnormalities", "vascular_diseases", "heart-disease"]],
+            ["cardiovascular_abnormalities", 0, ["turner_syndrome", "tetralogy_of_fallot", "noonan_syndrome"]],
+            ["vascular_diseases", 0, ["arteriovenous_malformations", "high-blood_pressure", "arterial_occlusions"]],
+            ["heart-disease", 0, ["aortic-valve_stenosis", "cardiac_arrests", "carcinoid_heart_disease"]],
         ]
     elif corpusName == "ql":
         userInput = [
-            ["ROOT", -1, ["quantum algorithms", "quantum systems", "quantum theory"]],
-            ["quantum algorithms", 0, ["quantum annealing", "quantum machine learning"]],
-            ["quantum systems", 0, ["quantum computers", "quantum circuits"]],
-            ["quantum theory", 0, ["quantum states", "hilbert-space"]],
+            ["ROOT", -1, ["quantum_algorithms", "quantum_systems", "quantum_theory"]],
+            ["quantum_algorithms", 0, ["quantum_annealing", "quantum_machine_learning"]],
+            ["quantum_systems", 0, ["quantum_computers", "quantum_circuits"]],
+            ["quantum_theory", 0, ["quantum_states", "hilbert-space"]],
         ]
     elif corpusName == "SignalProcessing":
         userInput = [

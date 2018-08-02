@@ -1,0 +1,947 @@
+0.9805170947	speech recognition
+0.9779197969	higher education
+0.9774570989	pattern recognition
+0.9769994669	automatic speech recognition
+0.9766864278	natural language
+0.9765274699	question answering
+0.9750876971	feature selection
+0.9746112198	remote sensing
+0.9735762111	software engineering
+0.9735431169	neural networks
+0.9732381017	natural language processing
+0.9712810133	data mining
+0.9708348080	dimensionality reduction
+0.9706069965	random forest
+0.9703707949	reinforcement learning
+0.9703230904	maximum likelihood
+0.9701204377	motion planning
+0.9696053231	world wide web
+0.9694425859	artificial intelligence
+0.9693643702	monte carlo
+0.9688966244	knowledge management
+0.9682602852	knowledge transfer
+0.9678044272	hidden markov model
+0.9676889664	programming language
+0.9672310221	signal processing
+0.9667055115	software development
+0.9657679086	neural network
+0.9654808314	social studies
+0.9653441568	decision tree
+0.9638351339	gene expression
+0.9632602447	information retrieval
+0.9629323435	artificial neural network
+0.9620246044	gradient descent
+0.9614396612	semantic web
+0.9611290984	chinese characters
+0.9598100602	virtual reality
+0.9595001244	social media
+0.9593587528	artificial neural networks
+0.9589355132	number theory
+0.9586528651	mobile robot
+0.9581598763	hidden markov models
+0.9577877783	human brain
+0.9568727028	information extraction
+0.9567540779	big data
+0.9566250916	conditional random field
+0.9558450794	deep learning
+0.9556598079	data structures
+0.9552344959	support vector machines
+0.9540591314	user interface
+0.9538345501	face recognition
+0.9536609392	collaborative learning
+0.9535596423	knowledge acquisition
+0.9535518959	machine translation
+0.9533298967	social computing
+0.9525119428	machine learning
+0.9520237686	pattern matching
+0.9499513969	object oriented
+0.9497504264	information processing
+0.9489887200	functional programming
+0.9489303249	data integration
+0.9481914517	weakly supervised
+0.9480282620	image processing
+0.9478521024	formative assessment
+0.9477642453	left ventricle
+0.9469564263	object detection
+0.9465332286	information security
+0.9464778173	case based reasoning
+0.9462399394	lifelong learning
+0.9461632223	feature extraction
+0.9461186512	image recognition
+0.9461072692	restricted boltzmann machine
+0.9459289657	problem solving
+0.9452590175	social networks
+0.9451129032	procedural knowledge
+0.9450150069	web search
+0.9437404284	stochastic gradient descent
+0.9434815397	peer assessment
+0.9423378728	markov logic
+0.9423211164	educational technology
+0.9415557804	convolutional neural networks
+0.9411677243	conditional random fields
+0.9406565867	restricted boltzmann machines
+0.9401839607	natural language understanding
+0.9398283514	large scale
+0.9396005182	parallel processing
+0.9395518208	concept maps
+0.9390338883	image classification
+0.9389517563	intelligent tutoring systems
+0.9385800342	denoising autoencoders
+0.9384638966	pedagogical content knowledge
+0.9379745551	object tracking
+0.9374549323	complex systems
+0.9372567982	convolutional neural network
+0.9368953883	boltzmann machine
+0.9364725796	expert systems
+0.9364257213	language processing
+0.9362167766	traffic classification
+0.9359134463	software tools
+0.9356168842	support vector machine
+0.9354588488	high school
+0.9338096851	principal component analysis
+0.9336981525	probabilistic models
+0.9333843278	professional development
+0.9329632034	deep belief nets
+0.9317509244	wrapper induction
+0.9316979382	boltzmann machines
+0.9314580521	recurrent neural networks
+0.9312098903	semantic role labeling
+0.9302163004	image retrieval
+0.9298725899	reasoning questions
+0.9296798398	receptive fields
+0.9291589183	problem based learning
+0.9290899901	unsupervised learning
+0.9288223296	knowledge building
+0.9280540819	video games
+0.9276636479	decision making
+0.9272291872	feedforward neural
+0.9270034612	united states
+0.9265440160	recurrent neural network
+0.9256829478	content analysis
+0.9253452163	domain specific
+0.9251634679	associative memory
+0.9251162257	object recognition
+0.9250963426	deep neural networks
+0.9249230840	neural net
+0.9247176624	hidden web
+0.9244195879	traffic identification
+0.9237032773	theorem proving
+0.9234729743	human intelligence
+0.9223606499	emotion recognition
+0.9223056812	game playing
+0.9220852499	online discussion
+0.9220159169	spoken language
+0.9217385984	digital storytelling
+0.9207286301	knowledge engineering
+0.9199204899	mobile devices
+0.9196903772	linguistic knowledge
+0.9177879476	complex valued
+0.9173044381	lessons learned
+0.9168669102	character recognition
+0.9165338731	deep belief networks
+0.9162658202	learning styles
+0.9162484702	input output
+0.9160386234	neural nets
+0.9160115571	real valued
+0.9160022297	relation extraction
+0.9152463279	semantic parsing
+0.9143816912	event detection
+0.9142845648	transfer learning
+0.9140652838	adaptive test
+0.9138583593	group cognition
+0.9130051670	empirical studies
+0.9128829207	grand challenges
+0.9120498107	low power
+0.9119243726	engineering education
+0.9116548643	fu qs
+0.9111710236	semantic embedding
+0.9107191512	semi supervised
+0.9099558091	critical thinking
+0.9097909777	high dimensional
+0.9093627658	internal representations
+0.9089716547	local minima
+0.9084739568	case study
+0.9082149495	domain adaptation
+0.9077394375	multiple kernel
+0.9071616588	technology integration
+0.9068671199	random fields
+0.9067228535	handwritten digit
+0.9067214633	blockin blockin
+0.9067102872	knowledge elaboration
+0.9064034070	phone recognition
+0.9059294898	training sets
+0.9051133596	active learning
+0.9050384920	computational complexity
+0.9043403156	visual representations
+0.9039700570	multiple choice
+0.9037943760	deep architectures
+0.9036753159	generative model
+0.9034181816	data analysis
+0.9020169087	deep blue
+0.9017627049	unsupervised feature learning
+0.8987804947	supervised learning
+0.8986819942	deep reinforcement learning
+0.8986161907	feature space
+0.8978999427	multi agent
+0.8977647027	open ended
+0.8976094876	web site
+0.8973921412	health care
+0.8966694575	deep boltzmann machines
+0.8964339937	sparse coding
+0.8953099775	deep web
+0.8942771389	distance education
+0.8941206646	interaction design
+0.8938042092	feed forward
+0.8934176344	auto encoder
+0.8928471393	named entity
+0.8927146893	high resolution
+0.8923684538	kernel methods
+0.8912868020	local search
+0.8909005710	invariant features
+0.8906738105	deep neural network
+0.8906166246	empirical study
+0.8902021267	interface design
+0.8900111680	auto encoders
+0.8900003217	linguistic analysis
+0.8890499739	semantic analysis
+0.8877278409	training samples
+0.8866527054	multi class
+0.8866258750	low cost
+0.8865272290	knowledge construction
+0.8865221116	labeled data
+0.8862712010	online distance education
+0.8859939346	multi view
+0.8858869340	multiple representations
+0.8853857686	narrative centered learning
+0.8850492015	natural images
+0.8849106338	high performance
+0.8847996116	game design
+0.8842027733	deep belief network
+0.8840325669	multi dimensional
+0.8825687426	knowledge base
+0.8809571718	deep transfer
+0.8807645951	spatio temporal
+0.8796388243	learning environments
+0.8795793426	graphical models
+0.8794131500	tutoring systems
+0.8791867487	recommender systems
+0.8776724998	speaker specific
+0.8776587877	discriminant analysis
+0.8768143772	deep convolutional neural network
+0.8765663702	manifold learning
+0.8750075084	network traffic
+0.8748940046	prior knowledge
+0.8737471535	multi layer
+0.8713237997	latent variables
+0.8711326495	high accuracy
+0.8710487747	domain independent
+0.8706265413	image representations
+0.8705163781	feature learning
+0.8704746826	special issue
+0.8703384376	single layer
+0.8700746481	game based learning
+0.8696914029	data set
+0.8696124365	technology enhanced learning
+0.8695269335	gaussian mixture
+0.8676588623	semi supervised learning
+0.8669874834	case studies
+0.8669072944	ad hoc
+0.8667712611	fixed point
+0.8658082631	data analytics
+0.8650609962	deep sea
+0.8637019666	online learning
+0.8625108375	multi objective
+0.8612866271	cognitive science
+0.8602871909	generative models
+0.8600950806	learning outcomes
+0.8573318110	deep packet inspection
+0.8569553512	information technology
+0.8561683647	knowledge sources
+0.8560383125	unsupervised pre training
+0.8552008943	log likelihood
+0.8536265258	error rate
+0.8535718320	small scale
+0.8534229740	distance learning
+0.8524846240	statistical models
+0.8513161654	science education
+0.8512926896	vicarious learning
+0.8504089460	web based
+0.8496416894	fine grained
+0.8457311891	open source
+0.8446438371	search engine
+0.8442860948	low dimensional
+0.8436354301	coarse grained
+0.8418063391	convolutional networks
+0.8410953827	reward function
+0.8409693903	human behavior
+0.8408388117	syntactic analysis
+0.8404128270	kernel based
+0.8389181586	higher order
+0.8380917690	decision support
+0.8380459687	multiple levels
+0.8380429607	web sites
+0.8377303452	learning analytics
+0.8377141485	text based
+0.8366550822	deep generative models
+0.8360869046	training set
+0.8349464230	web pages
+0.8344147714	knowledge discovery
+0.8342162990	subject matter
+0.8312337982	search engines
+0.8305286321	domain knowledge
+0.8288699996	greedy layer wise
+0.8283544772	hidden layer
+0.8272767780	hidden units
+0.8269482809	objective function
+0.8269119554	large margin
+0.8250130085	conceptual understanding
+0.8249379545	intelligent agents
+0.8233671392	multi task
+0.8231112364	learning algorithm
+0.8229359443	low level
+0.8224288746	undergraduate students
+0.8221399171	mobile learning
+0.8209032317	deeper understanding
+0.8205649476	domain experts
+0.8200192830	data sets
+0.8184827595	model based
+0.8179281912	network architecture
+0.8174205513	hidden nodes
+0.8173745323	deep submicron
+0.8170856345	hybrid model
+0.8166941799	high frequency
+0.8165032530	general purpose
+0.8158212231	multiple layers
+0.8153964785	current research
+0.8147362429	years ago
+0.8133129155	context dependent
+0.8130090234	parallel corpora
+0.8115186845	classification tasks
+0.8113729601	labeled training
+0.8111086440	feature representation
+0.8103710044	pre training
+0.8102505049	layer wise
+0.8093126068	decision trees
+0.8070702405	high speed
+0.8065151000	long range
+0.8040470031	learned features
+0.8037505747	deep linguistic
+0.8031997976	extreme learning
+0.8029523326	great success
+0.8028907080	stochastic gradient
+0.8022817389	small groups
+0.8013528134	training data
+0.8011566273	image patches
+0.7999734443	high quality
+0.7987414762	research group
+0.7976563466	handwritten digits
+0.7957575092	feature representations
+0.7950054698	convolutional network
+0.7939666274	proposed framework
+0.7928946968	data driven
+0.7925116575	recognition accuracy
+0.7915184647	higher level
+0.7913528466	ground truth
+0.7909458166	proposed algorithm
+0.7907520465	belief networks
+0.7902119070	deep convolutional neural networks
+0.7888260644	architectural design
+0.7875322174	classification accuracy
+0.7870318888	intelligent tutoring
+0.7840103641	method achieves
+0.7839558980	training examples
+0.7832664064	classification problem
+0.7812718997	visual object
+0.7805113222	fine tuned
+0.7804159301	input data
+0.7802274680	information systems
+0.7774811874	support vector
+0.7771950299	labeled samples
+0.7764112082	background knowledge
+0.7754252341	results obtained
+0.7744258252	_ _ _ _ _
+0.7738015873	fine tuning
+0.7734439097	proposed method
+0.7707549440	research project
+0.7700767906	_ _ _ _ _ _
+0.7695148289	real world
+0.7693716609	cognitive skills
+0.7668879357	published results
+0.7664561904	solving problems
+0.7661164226	pre trained
+0.7641067110	high dimensional data
+0.7635332739	intelligent tutoring system
+0.7634758394	ell students
+0.7632157526	plug ins
+0.7622481482	long term
+0.7617339731	trade offs
+0.7605636899	neural network architecture
+0.7565661841	authentic learning
+0.7535096802	web 2.0
+0.7531655453	unlabeled data
+0.7517929762	high level features
+0.7516741369	language understanding
+0.7509606341	deep belief
+0.7489015989	hidden layers
+0.7488061324	building blocks
+0.7472725519	statistical machine learning
+0.7449541554	cross validation
+0.7449203352	large datasets
+0.7446447256	21st century
+0.7443416273	incremental learning
+0.7418614380	rule based
+0.7400602933	learning environment
+0.7382480844	case based
+0.7375816102	based approach
+0.7372921358	express my gratitude
+0.7368723207	fully connected
+0.7358143373	significantly outperforms
+0.7346166108	extensive experiments
+0.7342577809	learning strategies
+0.7339056004	faculty members
+0.7303143421	deep understanding
+0.7287370107	short term
+0.7279507698	promote deep learning
+0.7278852544	deep learning architectures
+0.7272916657	starting point
+0.7266137162	real world applications
+0.7238785250	superior performance
+0.7227829579	learning algorithms
+0.7207342246	real life
+0.7200522488	article presents
+0.7195443503	deep learning approaches
+0.7193773857	neural network based
+0.7178005054	deep architecture
+0.7176044746	hand crafted
+0.7172372302	building block
+0.7162731919	promising results
+0.7143870165	significant improvements
+0.7117126518	networks trained
+0.7115914884	narrative centered
+0.7107261940	activation functions
+0.7077434245	benchmark datasets
+0.7061977154	parameter space
+0.7043097286	parameter estimation
+0.7028059587	high level
+0.7024875683	requires prior specific permission
+0.7017152812	learning by teaching
+0.6992357263	recent developments
+0.6914369686	existing methods
+0.6888042318	paper describes
+0.6863694503	recent advances
+0.6839143752	paper discusses
+0.6801595611	machine learning algorithms
+0.6785054789	belief nets
+0.6783590756	optimization problems
+0.6765493561	solve problems
+0.6750419454	discriminative features
+0.6741742018	deep syntactic
+0.6732611214	artificial neural
+0.6690207060	machine learning techniques
+0.6670367193	design principles
+0.6654293965	orders of magnitude
+0.6634799607	experimental results
+0.6630305861	visual features
+0.6626067991	markov models
+0.6584900083	human level
+0.6576973189	challenging task
+0.6553515489	knowledge representation
+0.6543179106	model parameters
+0.6497523982	c + +
+0.6478316672	recently proposed
+0.6476508968	current state
+0.6472847009	test set
+0.6464795185	students learn
+0.6289564589	advantage and that copies bear
+0.6237041709	future research
+0.6232084196	commercial advantage and that copies bear
+0.6231430811	proposed approach
+0.6191071404	recognition performance
+0.6153917968	research community
+0.6105749544	deep convolutional
+0.6080445348	probabilistic model
+0.6058752158	level features
+0.6052986035	paper presents
+0.6049532358	principal component
+0.5973531304	learning experiences
+0.5901625161	traditional approaches
+0.5866845602	data collected
+0.5859770769	recognition tasks
+0.5842152715	syntactic and semantic
+0.5835005179	layer by layer
+0.5826004416	express my deep
+0.5792370631	time series
+0.5730641781	computer science
+0.5709333264	proof of concept
+0.5663346101	post on servers
+0.5544087608	end to end
+0.5536763795	giving me the opportunity
+0.5532802843	computer graphics
+0.5516360342	21 st century
+0.5503108580	state of the art methods
+0.5439344784	computer aided
+0.5377704031	computer vision
+0.5368832991	based learning environment
+0.5327691046	improve performance
+0.5284538394	state of the art results
+0.5228168489	computer supported
+0.5152289403	approaches to learning
+0.5151078815	belief network
+0.5147453168	centered learning
+0.5103877437	simulation results
+0.5078616554	look back
+0.5047618860	teaching and learning
+0.5026597763	local receptive
+0.5016245901	design and implementation
+0.5008199692	deep q
+0.4994040744	front end
+0.4984971694	back propagation
+0.4982255986	system dynamics
+0.4982079869	solve the problem
+0.4957391551	face to face
+0.4934379192	figure 1
+0.4917056226	previous research
+0.4881377125	expert system
+0.4838319676	trade off
+0.4835229222	self explanation
+0.4813012602	vision system
+0.4799667707	computer games
+0.4773947076	state of the art performance
+0.4766969038	classification task
+0.4759105203	self regulation
+0.4746326951	shallow and deep
+0.4728606192	real time
+0.4710799978	express my deep gratitude to
+0.4677712738	gave me
+0.4662426674	human computer
+0.4661343489	content knowledge
+0.4645311783	my wife
+0.4643889972	this special issue
+0.4619225623	taught me
+0.4612874205	next generation
+0.4607573560	computational models
+0.4602508525	copy otherwise
+0.4553223727	helped me
+0.4544707167	knowledge and skills
+0.4507118358	classroom use is granted without fee
+0.4482765863	my parents
+0.4482126843	connection between
+0.4473732532	& #
+0.4466505709	research and development
+0.4436877829	recent years
+0.4427690971	improve the performance
+0.4420953036	top down
+0.4400419327	copies are not made or distributed
+0.4369590838	from ultrasound
+0.4358738364	publicly available
+0.4358321316	an overview
+0.4355480618	higher levels of
+0.4339708023	faster than
+0.4333704812	point of view
+0.4327519491	technology enhanced
+0.4300136217	my family
+0.4299929772	students who
+0.4255126377	state of art
+0.4249166583	fee provided
+0.4233165023	layers of hidden
+0.4225791593	my advisor
+0.4152048826	results demonstrate
+0.4125078638	human like
+0.4120926347	gap between
+0.4091262913	mapping between
+0.4089927771	demonstrate the effectiveness
+0.4073419785	off the shelf
+0.4070075014	speed up
+0.4045912910	a novel method
+0.4039256985	deep neural
+0.4031201102	take all
+0.4031012174	carried out
+0.4030505874	relationship between
+0.4022798524	my thesis
+0.4007643564	my friends
+0.3962214604	an adaptive
+0.3947950128	my committee
+0.3935835911	non convex
+0.3900396505	my life
+0.3868194067	lessons learned from
+0.3857083681	similarity between
+0.3844607022	ability to learn
+0.3831368245	express my
+0.3821601746	deep understanding of
+0.3781316527	three years
+0.3769659858	one shot
+0.3768902933	propose a method
+0.3767342561	large number of
+0.3751521917	relationships between
+0.3725675913	non linear
+0.3716412302	semantic role
+0.3711938804	acknowledgments first
+0.3707308629	effectiveness of the proposed
+0.3698801291	deep sense of
+0.3689138330	et al
+0.3680647722	this dissertation
+0.3657351097	recent advances in
+0.3653451601	i n
+0.3651617059	my phd
+0.3627828144	statistical machine
+0.3624380020	each layer
+0.3608887438	i am grateful
+0.3599151940	on line
+0.3598950756	provided that copies are not made
+0.3588876140	gratitude to my
+0.3587137852	results showed that
+0.3586681317	method based on
+0.3579776396	or distributed for profit or commercial
+0.3564077354	bottom up
+0.3560575370	first year
+0.3555488153	my supervisor
+0.3546242836	deep insight into
+0.3541145249	generated by
+0.3525127731	concept of an is
+0.3499091775	during my
+0.3485946193	wide range of
+0.3474001339	my colleagues
+0.3452316102	special thanks
+0.3413354730	understand how
+0.3399799640	non parametric
+0.3385733826	successfully applied to
+0.3368204654	understanding of the concept of an
+0.3360365071	i thank
+0.3359371897	time consuming
+0.3346865247	important role
+0.3338288811	an extension
+0.3323140679	second order
+0.3321826599	results suggest that
+0.3311288739	i want to
+0.3305764947	carry out
+0.3287393892	well suited
+0.3283207267	recurrent neural
+0.3276145322	throughout my
+0.3265228547	state of the art
+0.3257600432	i am
+0.3245260291	based on
+0.3238472256	introduce a new
+0.3231259565	thanks to my
+0.3216948282	this paper proposes
+0.3214780085	thank my advisor
+0.3210436471	a broad range
+0.3198134157	emphasis on
+0.3182112760	refers to
+0.3164004246	acknowledgments i
+0.3149333964	express my deep gratitude to my
+0.3143211026	this paper reports
+0.3142980457	this paper describes
+0.3141094557	thank you
+0.3136696745	last decade
+0.3129259637	greedy layer
+0.3111483606	on chip
+0.3101088405	this paper discusses
+0.3082746980	two types
+0.3080371494	this paper presents
+0.3067452929	i owe
+0.3067011171	small number of
+0.3056777222	suited for
+0.3043063014	relations between
+0.3038108781	points out
+0.3038051662	vector machine
+0.3017408654	non trivial
+0.2997715126	distribution over
+0.2985885694	connections between
+0.2985741433	a wide range
+0.2985594667	take advantage
+0.2983615901	a wide variety
+0.2980375148	giving me
+0.2977315916	conjunction with
+0.2969951590	wish to thank
+0.2966419613	how much
+0.2958157004	i had
+0.2950547847	in recent years
+0.2938908352	those who
+0.2934069710	would like to express my deep
+0.2926335472	a small number
+0.2903922660	i thank my
+0.2902045296	no longer
+0.2888518399	deals with
+0.2887033665	an important role
+0.2872813964	difference between
+0.2867180628	i am deeply
+0.2865381018	this thesis
+0.2862625084	i have learned
+0.2858568525	cope with
+0.2858506837	his guidance
+0.2839655680	different types
+0.2830839009	tasks such as
+0.2829433775	computer assisted
+0.2828987836	motivated by
+0.2822105987	widely used
+0.2811861334	discuss how
+0.2808501066	acknowledgments i would like to
+0.2799237847	amount of information
+0.2797619264	i would like to express my
+0.2796620264	1 introduction
+0.2793926629	take place
+0.2790716468	different levels
+0.2782464731	differences between
+0.2744528046	makes it
+0.2740551884	improvement over
+0.2738278900	an end to end
+0.2724953991	deep gratitude
+0.2710934958	am grateful
+0.2697169630	purpose of this
+0.2681890464	i would also like to
+0.2674962945	new technologies
+0.2674863542	aimed at
+0.2662713238	focusing on
+0.2650712907	interactions between
+0.2649884400	significantly better
+0.2643734348	suffer from
+0.2642206604	this work for personal or
+0.2641258038	so called
+0.2638645821	few years
+0.2635516796	perform well
+0.2633003012	thank my
+0.2624936639	correlation between
+0.2623123466	or classroom use is
+0.2609193289	insights into
+0.2607743114	suggests that
+0.2599605457	my deep gratitude to my
+0.2586968989	be used as a
+0.2575087026	was developed
+0.2572450332	for his guidance
+0.2571254657	paper proposes a novel
+0.2561939883	a novel approach
+0.2541200806	supported by
+0.2533569442	focused on
+0.2521025107	insight into
+0.2512595271	me the opportunity
+0.2503104531	my deep gratitude
+0.2487916178	most important
+0.2479533990	results indicate that
+0.2473358067	integrated into
+0.2465337241	different kinds
+0.2464597226	showed that
+0.2462881253	more accurate
+0.2458669364	have been developed
+0.2450146176	thank him
+0.2444599625	commonly used
+0.2428571285	with minimal
+0.2428429868	understanding of how
+0.2427137733	my gratitude
+0.2422134412	effectiveness of our
+0.2415162933	more likely to
+0.2395839512	were found
+0.2393243611	in this area
+0.2392295886	into account
+0.2375031633	experimental results show
+0.2369245055	i would like to thank all
+0.2356740251	results show that the proposed
+0.2332144683	propose a novel
+0.2326170896	at the university
+0.2323446891	various types
+0.2315939153	we present
+0.2315536710	aims at
+0.2308317054	previous work
+0.2308106409	can be achieved
+0.2296439422	an alternative
+0.2280671214	i would like to thank
+0.2267879583	focuses on
+0.2262542460	two decades
+0.2255155290	this article
+0.2253435469	most popular
+0.2251263591	caused by
+0.2245452715	must be
+0.2244244686	acknowledgements i
+0.2243291303	focus on
+0.2234299627	or to redistribute
+0.2231926757	i want to thank
+0.2228690955	even though
+0.2227405377	have been successfully
+0.2223559982	we introduce
+0.2219332794	can be applied
+0.2218851633	did not
+0.2209068993	i would like to express
+0.2202380691	i would like to
+0.2196485068	an empirical
+0.2186365517	like to thank
+0.2183771744	i am also
+0.2173188000	experimental results show that
+0.2159170562	relying on
+0.2151175100	around the world
+0.2150227580	dealing with
+0.2148260370	have been
+0.2142037293	not necessarily
+0.2136225386	i would also like to thank
+0.2132141295	rely on
+0.2131760631	show that our method
+0.2129747632	this paper
+0.2124840539	full citation on the first page
+0.2123753959	would not have been
+0.2120069219	ranging from
+0.2118635655	show that our
+0.2113396955	can be
+0.2112573057	hands on
+0.2104755491	results suggest
+0.2104744091	deep insight
+0.2098225861	large amount of
+0.2095602151	allows us
+0.2089226294	we propose
+0.2089205401	viewed as
+0.2088024190	referred to as
+0.2078643983	inspired by
+0.2074293692	have been proposed
+0.2071721452	has been
+0.2071314183	more importantly
+0.2068991712	has been shown
+0.2067130055	combined with
+0.2053070693	results show that our
+0.2046232832	derived from
+0.2045165355	i wish
+0.2043152073	proposes a novel
+0.2034868995	serve as
+0.2033930774	deal with
+0.2033666483	full citation
+0.2026697645	for giving me
+0.2018787912	do so
+0.2005741929	results show that
+0.2000240493	benefit from
+0.1991265687	does not require
+0.1989426459	allow us
+0.1985920139	interact with
+0.1979688783	does not
+0.1978558104	an excellent
+0.1970077537	part of speech
+0.1967379254	shown to be
+0.1956524875	very difficult
+0.1938127538	large number
+0.1927310562	characterized by
+0.1924972846	know how
+0.1922291628	so far
+0.1911564924	has received
+0.1905934335	can be used
+0.1901218427	experiments show that
+0.1900824131	results showed
+0.1899023482	produced by
+0.1895582797	can also be used
+0.1886542459	depends on
+0.1883633064	are discussed
+0.1871866310	suggesting that
+0.1867317026	in this paper
+0.1860195741	interacting with
+0.1859798346	much better
+0.1852418602	has focused
+0.1852001327	may not be
+0.1850376184	i would like to thank my
+0.1849287159	people who
+0.1844888415	we find that
+0.1844209730	can also be
+0.1842550417	of the art results
+0.1842460518	present a novel
+0.1835302063	in this paper we propose
+0.1833572413	well known
+0.1825453115	better than
+0.1822175662	propose a new
+0.1814963100	one of the key
+0.1809052297	argue that
+0.1808722544	do not
+0.1803562018	an exponential
+0.1791370989	it is important
+0.1785530899	as well as
+0.1783318756	relies on
+0.1783318756	depending on
+0.1782349335	people who have
+0.1781449529	have helped
+0.1778083849	at the end
+0.1771479522	in this paper we present
+0.1770447520	rather than
+0.1770019302	first and foremost
+0.1741624080	can be used to
+0.1716708193	such as
+0.1701588324	concerned with
+0.1683998778	want to thank
+0.1683229955	responsible for
+0.1675737337	would like to express
+0.1672422588	at least
+0.1664276526	like to thank my
+0.1647264541	needs to be
+0.1640296124	we evaluate our
+0.1630835244	one of the most important
+0.1627673645	have been shown
+0.1620360696	copies are
+0.1604422198	i would like
+0.1603454432	be able to
+0.1584832857	there are many
+0.1574538985	as a consequence
+0.1573505742	is an important
+0.1570019504	which we call
+0.1567088441	for this purpose
+0.1551996994	would not have
+0.1549168509	look at
+0.1527955386	without any
+0.1522116942	would like to thank
+0.1518953252	be solved
+0.1517442008	over the past
+0.1516327125	successfully used
+0.1506795961	+ +
+0.1505986005	not just
+0.1499622103	we are able to
+0.1498047310	we conclude
+0.1490059485	new insights
+0.1479339075	on the other hand
+0.1465679139	can be obtained
+0.1465042164	conclude that
+0.1462897987	as a tool
+0.1457836920	we show how
+0.1440004553	be seen as
+0.1436974755	tutoring system
+0.1419081201	we show that
+0.1416974169	their own
+0.1414676952	we conclude that
+0.1411934979	we introduce a new
+0.1411040846	less than
+0.1410228712	it is difficult to
+0.1404862782	as a result
+0.1404180448	as opposed to
+0.1394679166	its own
+0.1394362782	we have developed
+0.1389426029	has not been
+0.1383535717	able to learn
+0.1381533867	it is possible to
+0.1378856488	i would
+0.1359426029	first of all
+0.1346551037	we argue that
+0.1344799473	in order to
+0.1336283887	has always been
+0.1328743366	there is no
+0.1327907203	have not been
+0.1316665138	we propose a new
+0.1314526894	with respect to
+0.1304699649	followed by
+0.1300215565	show that the proposed
+0.1295857716	over the last
+0.1284623148	along the way
+0.1281222893	it is necessary to
+0.1270260443	one of the main
+0.1239311863	as well
+0.1211436908	at the same time
+0.1211217560	thank all
+0.1189856168	only a few
+0.1182695715	away from
+0.1167366136	we believe that
+0.1156746680	from each other
+0.1154870492	can be seen as
+0.1154207392	we propose a novel
+0.1122751156	one of the most
+0.1100746239	we present a novel
+0.1093013299	we are interested in
+0.1090566814	would also like to thank
+0.1085586591	would like
+0.1059933739	due to its
+0.1016763299	has shown that
+0.1008834605	been shown
+0.1004394609	results show
+0.0836100251	been shown to be
+0.0815044296	more likely
+0.0799861550	describes how
+0.0795484228	also like to thank
+0.0794970180	been developed
+0.0639864410	results indicate

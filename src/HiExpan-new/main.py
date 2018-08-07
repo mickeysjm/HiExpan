@@ -15,13 +15,16 @@ import os
 level2max_children = {-1:15, 0:20, 1:40, 2:1e9, 3:1e9, 4:1e9, 5:1e9}
 # the feature relative weights used for expanding a level x node's children
 level2source_weights = {
-  -1: {"sg":5.0, "tp":0.0, "eb":0.0},
-  0: {"sg":5.0, "tp":0.0, "eb":0.0},
-  1: {"sg":5.0, "tp":0.0, "eb":0.0},
-  2: {"sg":5.0, "tp":0.0, "eb":0.0},
+    -1: {"sg":5.0, "tp":0.0, "eb":0.0},
+    0: {"sg":5.0, "tp":0.0, "eb":0.0},
+    1: {"sg":5.0, "tp":0.0, "eb":0.0},
+    2: {"sg":5.0, "tp":0.0, "eb":0.0},
+    3: {"sg":5.0, "tp":0.0, "eb":0.0},
+    4: {"sg":5.0, "tp":0.0, "eb":0.0},
+    5: {"sg":5.0, "tp":0.0, "eb":0.0},
 }
-# the maximum expanded entity number
-level2max_expand_eids = {-1: 3, 0:5, 1:5, 2:5}
+# the maximum expanded entity number in each iteration under each node
+level2max_expand_eids = {-1: 3, 0:5, 1:5, 2:5, 3:5, 4:5, 5:5}
 # the global level-wise reference_edges between each two levels
 level2reference_edges = defaultdict(list)
 

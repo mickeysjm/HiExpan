@@ -83,7 +83,41 @@ if __name__ == "__main__":
     parser.add_argument('-num_initial_edge', type=int, default=1, help='number of each niece/nephew nodes for depth expansion')
     parser.add_argument('-num_initial_node', type=int, default=3,
                         help='number of each node\'s initial children for depth expansion')
+    parser.add_argument('-user-input', type=argparse.FileType("r"), default=None,
+                        help='specify user input as a json dict in command line')
+    import json
+    parser.add_argument('-max-child-level-overrides', type=json.loads, default=None,
+                        help='JSON dictionary to specify overrides to what the max number of children at each numbered level is (keys must be number strings, due to JSON requirements)')
+    parser.add_argument("-max-width-expansion-per-iteration-overrides", type=json.loads, default=None,
+                        help='JSON dictionary to specify limits to number of children allowed by width expansion at each numbered level, per width expan iteration (keys must be number strings, due to JSON requirements)')
+    import set_expan
+    parser.add_argument("-width-expan-iterations", type=int, default = -1,
+                        help="number of iterations for width expan (default is {})".format(set_expan.MAX_ITER_SET))
+    parser.add_argument("-width-expan-weight-overrides", type=json.loads, default = None,
+                        help="JSON dictionary to override values in level2source_weights (keys must be number strings, due to JSON requirements)")
     args = parser.parse_args()
+
+    if args.max_child_level_overrides:
+        for k, v in args.max_child_level_overrides.items():
+            level2max_children[int(k)] = v
+
+    if args.max_width_expansion_per_iteration_overrides:
+        for k, v in args.max_width_expansion_per_iteration_overrides.items():
+            level2max_expand_eids[int(k)] = v
+
+    if args.width_expan_weight_overrides:
+        for k, v in args.width_expan_weight_overrides.items():
+            k = int(k)
+            try:
+                entry = level2source_weights[k]
+            except KeyError:
+                entry = {"sg": 5.0, "tp": 0.0, "eb": 0.0}
+                level2source_weights[k] = entry
+            for subk in ("sg", "tp", "eb"):
+                entry[subk] = v.get(subk, entry[subk])
+
+    if args.width_expan_iterations > -1:
+        set_expan.MAX_ITER_SET = args.width_expan_iterations
 
     print("=== Start loading data ...... ===")
     folder = '../../data/' + args.data + '/intermediate/'
@@ -97,7 +131,12 @@ if __name__ == "__main__":
     print("=== Finish loading data ...... ===")
 
     print("=== Start loading seed supervision ...... ===")
-    userInput = load_seeds(args.data)
+    if args.user_input:
+        import json
+        userInput = json.loads(args.user_input.read())
+        args.user_input.close()
+    else:
+        userInput = load_seeds(args.data)
     if len(userInput) == 0:
         print("Terminated due to no user seed. Please specify seed taxonomy in seedLoader.py")
         exit(-1)
@@ -149,6 +188,9 @@ if __name__ == "__main__":
     update = True
     iters = 0
     while update:
+        # SAM: Cancel update for this round. Enable if
+        # a node is processed.
+        update = False
         eid2nodes = {}
         eidsWithConflicts = set()
         targetNodes = [rootNode] # targetNodes includes all parent nodes to expand
@@ -175,6 +217,9 @@ if __name__ == "__main__":
                 targetNodes += targetNode.children
                 print("[INFO: Reach maximum children at node]:", targetNode)
                 continue
+
+            # SAM: We're gonna do SOMEthing.
+            update = True
 
             # Depth expansion: expand target node
             if len(targetNode.children) == 0:
@@ -213,7 +258,7 @@ if __name__ == "__main__":
                                                             eidAndType2strength, eid2ename, eid2embed,
                                                             source_weights=level2source_weights[targetNode.level],
                                                             max_expand_eids=max_expand_eids, use_embed=True,
-                                                            use_type=True)
+                                                            use_type=True, FLAGS_DEBUG = args.debug)
             newOrderedChildren = []
             for ele in newOrderedChildrenEidsWithConfidence:
                 newChildEid = ele[0]
@@ -295,6 +340,9 @@ if __name__ == "__main__":
         if iters >= args.max_iter_tree:
             break
 
+    if iters < args.max_iter_tree:
+        print("Quit early after {} iterations due to lack of activity".format(iters))
+
     print("Final Taxonomy Tree")
     rootNode.printSubtree(0)
     taxonomy_file_path = "../../data/{}/results/{}/taxonomy_final.txt".format(args.data, args.taxonPrefix)
@@ -302,5 +350,4 @@ if __name__ == "__main__":
     with open(taxonomy_pickle_path, "wb") as fout:
         pickle.dump(rootNode, fout, protocol=pickle.HIGHEST_PROTOCOL)
     rootNode.saveToFile(taxonomy_file_path)
-
 

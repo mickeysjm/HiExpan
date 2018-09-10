@@ -178,11 +178,11 @@ def setExpan(seedEidsWithConfidence, negativeSeedEids, eid2patterns, pattern2eid
 
     # Cache the seedEids for later use
     cached_seedEids = set([ele for ele in seedEids])
-    if FLAGS_VERBOSE:
+    if FLAGS_DEBUG:
         print('Seed set:')
         for eid in seedEids:
             print(eid, eid2ename[eid])
-        print("[INFO] Start SetExpan")
+        print("[INFO] Start SetExpan, {} iterations, {} maximum added".format(MAX_ITER_SET, max_expand_eids))
 
     iters = 0
     while iters < MAX_ITER_SET:

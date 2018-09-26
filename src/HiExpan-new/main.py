@@ -98,7 +98,10 @@ if __name__ == "__main__":
                         help="number of iterations for width expan (default is {})".format(set_expan.MAX_ITER_SET))
     parser.add_argument("-width-expan-weight-overrides", type=json.loads, default = None,
                         help="JSON dictionary to override values in level2source_weights (keys must be number strings, due to JSON requirements)")
+    parser.add_argument("-user-in-the-loop", type=int, default=0,
+                        help="whether print out intermediate high-quality skipgram to users for review, default value 0 means NO, all other values mean YES")
     args = parser.parse_args()
+    args.user_in_the_loop = (args.user_in_the_loop != 0)
 
     if args.max_child_level_overrides:
         for k, v in args.max_child_level_overrides.items():
@@ -261,7 +264,8 @@ if __name__ == "__main__":
                                                             eidAndType2strength, eid2ename, eid2embed,
                                                             source_weights=level2source_weights[targetNode.level],
                                                             max_expand_eids=max_expand_eids, use_embed=True,
-                                                            use_type=True, FLAGS_DEBUG = args.debug)
+                                                            use_type=True, FLAGS_DEBUG = args.debug,
+                                                            user_in_the_loop=args.user_in_the_loop)
             newOrderedChildren = []
             for ele in newOrderedChildrenEidsWithConfidence:
                 newChildEid = ele[0]

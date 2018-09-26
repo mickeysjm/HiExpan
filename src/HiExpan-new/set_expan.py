@@ -5,6 +5,7 @@ __description__: Python Implementation of SetExpan algorithm
 import random
 import math
 import time
+import re
 import numpy as np
 from scipy.spatial import distance
 from collections import defaultdict
@@ -32,6 +33,18 @@ TOP_EID_EACH_FEATURE = 50
 # Skipgrams that can cover [FLAGS_SG_POPULARITY_LOWER, FLAGS_SG_POPULARITY_UPPER] numbers of entities will be retained
 FLAGS_SG_POPULARITY_LOWER = 3
 FLAGS_SG_POPULARITY_UPPER = 30 
+
+
+def parse_user_input(user_input_string):
+    """
+    :param user_input_string:
+    :return:
+    """
+    while True:
+        if re.match(r"^\d+(,(\d)+)*$", user_input_string):
+            return [int(ele) for ele in user_input_string.strip().split(",")]
+        else:
+            user_input_string = input("Select good skipgrams' rank, seperated by comma, (e.g., 1,2,3,5,7):")
 
 
 def getSampledCoreSkipgrams(coreSkipgrams):
@@ -156,7 +169,8 @@ def sim_sib_type_only(eid1, eid2, eid2types, eidAndType2strength):
 def setExpan(seedEidsWithConfidence, negativeSeedEids, eid2patterns, pattern2eids, eidAndPattern2strength,
                          eid2types, type2eids, eidAndType2strength, eid2ename, eid2embed,
                          source_weights={"sg":1.0, "tp":5.0, "eb":1.0}, max_expand_eids=5,
-                         use_embed=False, use_type=False, FLAGS_VERBOSE=False, FLAGS_DEBUG=False, ):
+                         use_embed=False, use_type=False, FLAGS_VERBOSE=False, FLAGS_DEBUG=False,
+             user_in_the_loop=False):
     """
 
     :param seedEidsWithConfidence: a list of [eid (int), confidence_score (float)]
@@ -212,6 +226,20 @@ def setExpan(seedEidsWithConfidence, negativeSeedEids, eid2patterns, pattern2eid
             count += 1
             if combinedWeightBySkipgramMap[sg] * 1.0 / nOfSeedEids > THRESHOLD:
                 coreSkipgrams.append(sg)
+        if user_in_the_loop:
+            print("Skipgram features for current entity set: ".format([eid2ename[eid] for eid in seedEids]))
+            TOP_K_PRINTOUT = min(20, TOP_K_SG)  # print out top k skipgrams
+            print("{:<8}{}".format("Rank", "Skipgram"))
+            for rank, skipgram in enumerate(coreSkipgrams[:TOP_K_PRINTOUT]):
+                print('{:<8}{}'.format(rank + 1, skipgram))
+            user_input_string = input("Select good skipgrams' rank, seperated by comma, (e.g., 1,2,3,5,7):")
+            good_skipgram_idx = parse_user_input(user_input_string)
+            print("Selected quality skipgram features")
+            for idx in good_skipgram_idx:
+                if idx <= TOP_K_PRINTOUT:
+                    print('{:<8}{}'.format(idx, coreSkipgrams[idx-1]))
+            user_input_string = input("Do you want to stop viewing skipgrams and let model run to converge? (yes/no)")
+            user_in_the_loop = (user_input_string != "yes")
 
         # Type similarity
         if use_type:

@@ -190,6 +190,7 @@ if __name__ == "__main__":
 
     update = True
     iters = 0
+    swa = {}
     while update:
         # SAM: Cancel update for this round. Enable if
         # a node is processed.
@@ -261,7 +262,8 @@ if __name__ == "__main__":
                                                             eidAndType2strength, eid2ename, eid2embed,
                                                             source_weights=level2source_weights[targetNode.level],
                                                             max_expand_eids=max_expand_eids, use_embed=True,
-                                                            use_type=True, FLAGS_DEBUG = args.debug)
+                                                            use_type=True, FLAGS_DEBUG = args.debug,
+                                                            sibling_weight_aggregator = swa)
             newOrderedChildren = []
             for ele in newOrderedChildrenEidsWithConfidence:
                 newChildEid = ele[0]
@@ -287,8 +289,7 @@ if __name__ == "__main__":
                 if args.debug:
                     print("        Obtain node with ename=%s, eid=%s" % (eid2ename[newChildEid], newChildEid))
                 newOrderedChildren.append(newChild)
-            targetNode.addChildren(newOrderedChildren)
-
+            targetNode.addChildren(newOrderedChildren)            
             # Add its children as in the queue
             targetNodes += targetNode.children
 
@@ -354,3 +355,10 @@ if __name__ == "__main__":
         pickle.dump(rootNode, fout, protocol=pickle.HIGHEST_PROTOCOL)
     rootNode.saveToFile(taxonomy_file_path)
 
+    if swa is not None:
+        print("Saving final weight distribution")
+        fp = open("../../data/{}/results/{}/weight_distribution.json".format(args.data, args.taxonPrefix), "w")
+        # First, map all the entries to entities instead of IDs.
+        fp.write(json.dumps({eid2ename[k]: [[iters, i, eid2ename[seed], w] for [iters, i, seed, w] in v] for (k, v) in swa.items()}))
+        fp.close()
+    

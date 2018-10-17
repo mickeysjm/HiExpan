@@ -156,7 +156,8 @@ def sim_sib_type_only(eid1, eid2, eid2types, eidAndType2strength):
 def setExpan(seedEidsWithConfidence, negativeSeedEids, eid2patterns, pattern2eids, eidAndPattern2strength,
                          eid2types, type2eids, eidAndType2strength, eid2ename, eid2embed,
                          source_weights={"sg":1.0, "tp":5.0, "eb":1.0}, max_expand_eids=5,
-                         use_embed=False, use_type=False, FLAGS_VERBOSE=False, FLAGS_DEBUG=False, ):
+                         use_embed=False, use_type=False, FLAGS_VERBOSE=False, FLAGS_DEBUG=False,
+                         sibling_weight_aggregator = None):
     """
 
     :param seedEidsWithConfidence: a list of [eid (int), confidence_score (float)]
@@ -243,7 +244,26 @@ def setExpan(seedEidsWithConfidence, negativeSeedEids, eid2patterns, pattern2eid
             for eid in candidates:
                 combinedSgSimByCandidateEid[eid] = 0.0
                 for seed in seedEids:
-                    combinedSgSimByCandidateEid[eid] += getFeatureSim(eid, seed, eidAndPattern2strength, sampledCoreSkipgrams)
+                    w = getFeatureSim(eid, seed, eidAndPattern2strength, sampledCoreSkipgrams)
+                    combinedSgSimByCandidateEid[eid] += w
+                    if (sibling_weight_aggregator is not None) and (eid not in seedEids):
+                        try:
+                            swae = sibling_weight_aggregator[eid]
+                        except KeyError:
+                            swae = []
+                            sibling_weight_aggregator[eid] = swae
+                        swae.append([iters, i, seed, w])
+            if sibling_weight_aggregator is not None:
+                for seed in seedEids:
+                    for otherSeed in seedEids:
+                        if seed is not otherSeed:
+                            try:
+                                swae = sibling_weight_aggregator[seed]
+                            except KeyError:
+                                swae = []
+                                sibling_weight_aggregator[seed] = swae
+                            w = getFeatureSim(seed, otherSeed, eidAndPattern2strength, sampledCoreSkipgrams)
+                            swae.append([iters, i, otherSeed, w])
 
             # get top k candidates
             count = 0

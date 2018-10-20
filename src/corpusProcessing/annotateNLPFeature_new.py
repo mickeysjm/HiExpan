@@ -18,6 +18,7 @@ from collections import deque
 import spacy
 from spacy.symbols import ORTH, LEMMA, POS, TAG
 import mmap
+import argparse
 
 DEBUG = True
 
@@ -82,10 +83,10 @@ def find(haystack, needle):
 
 def obtain_p_tokens(p):
     '''
-
     :param p: a phrase string
     :return: a list of token text
     '''
+
     if p in p2tok_list:
         return p2tok_list[p]
     else:
@@ -124,7 +125,7 @@ def process_one_doc(article, articleId):
     doc = nlp(text)
 
     sentId = 0
-    for sent in doc.sents:  # doc.sents is just to separate a sentence into several parts (according to ':')
+    for sent in doc.sents:  # seems to me doc.sents is just to separate a sentence into several parts (according to ':')
         NPs = []
         pos = []
 
@@ -200,11 +201,10 @@ def process_corpus(input_path, output_path, real_suffix):
 
 
 if __name__ == "__main__":
-    corpusName = sys.argv[1]
-    input_path = sys.argv[2]
-    output_path = sys.argv[3]
-    real_suffix = sys.argv[4]  # used to prepend for articleID
-    # input_path = "../../data/" + corpusName + "/intermediate/segmentation.txt"
-    # output_path = "../../data/" + corpusName + "/intermediate/sentences.json.spacy"
-    # real_suffix = "aa"
-    process_corpus(input_path, output_path, real_suffix)
+    parser = argparse.ArgumentParser(prog='main.py', description='')
+    parser.add_argument('-corpusName', required=False, default='sample_dataset', help='corpusName: sample_dataset or sample_wiki or wiki')
+    parser.add_argument('-input_path', required=False, default='/Users/wanzheng/Desktop/SetExpan-MultiFacet/data/sample_dataset/intermediate/segmentation.txt', help='input_path')
+    parser.add_argument('-output_path', required=False, default='/Users/wanzheng/Desktop/SetExpan-MultiFacet/data/sample_dataset/intermediate/sentences.json.spacy', help='output_path')
+    parser.add_argument('-real_suffix', required=False, default="aa", help='real_suffix: used to prepend for articleID')  # used to prepend for articleID
+    args = parser.parse_args()
+    process_corpus(args.input_path, args.output_path, args.real_suffix)

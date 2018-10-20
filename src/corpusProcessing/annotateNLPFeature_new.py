@@ -72,8 +72,8 @@ def find(haystack, needle):
     i = n - 1
     while i < h:
         for j in range(n):
-            if haystack[i - j] != needle[-j - 1]:
-                i += skip.get(haystack[i], n)
+            if haystack[i - j].lower() != needle[-j - 1]:
+                i += skip.get(haystack[i].lower(), n)
                 break
         else:
             return i - n + 1
@@ -124,7 +124,7 @@ def process_one_doc(article, articleId):
     doc = nlp(text)
 
     sentId = 0
-    for sent in doc.sents:
+    for sent in doc.sents:  # doc.sents is just to separate a sentence into several parts (according to ':')
         NPs = []
         pos = []
 
@@ -144,14 +144,14 @@ def process_one_doc(article, articleId):
 
         entityMentions = []
         # For each quality phrase, check if it's NP
-        for p in phrases:
+        for p in phrases:  # phrases are always in lower case.
             for np in NPs:
                 # find if p is a substring of np
-                if np.text.find(p) != -1:
+                if np.text.lower().find(p) != -1:
                     sent_offset = sent.start
 
                     # tmp = nlp(p)
-                    p_tokens = obtain_p_tokens(p)
+                    p_tokens = obtain_p_tokens(p)  # Just to partition p into several tokens.
                     # p_tokens = [tok.text for tok in tmp]
 
                     offset = find(tokens[np.start - sent_offset:np.end - sent_offset], p_tokens)
@@ -165,7 +165,7 @@ def process_one_doc(article, articleId):
                            "end": start_offset + len(p_tokens) - 1, "type": "phrase"}
 
                     # sanity check
-                    if ent["text"] != " ".join(tokens[ent["start"]:ent["end"] + 1]):
+                    if ent["text"] != " ".join(x.lower() for x in tokens[ent["start"]:ent["end"] + 1]):
                         print("NOT MATCH", p, " ".join(tokens[ent["start"]:ent["end"] + 1]))
                         print("SENT", " ".join(tokens))
                         print("SENT2", sent.text)

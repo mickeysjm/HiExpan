@@ -18,6 +18,7 @@ from collections import deque
 import spacy
 from spacy.symbols import ORTH, LEMMA, POS, TAG
 import mmap
+import argparse
 
 DEBUG = True
 
@@ -72,8 +73,8 @@ def find(haystack, needle):
     i = n - 1
     while i < h:
         for j in range(n):
-            if haystack[i - j] != needle[-j - 1]:
-                i += skip.get(haystack[i], n)
+            if haystack[i - j].lower() != needle[-j - 1]:
+                i += skip.get(haystack[i].lower(), n)
                 break
         else:
             return i - n + 1
@@ -82,10 +83,10 @@ def find(haystack, needle):
 
 def obtain_p_tokens(p):
     '''
-
     :param p: a phrase string
     :return: a list of token text
     '''
+
     if p in p2tok_list:
         return p2tok_list[p]
     else:
@@ -124,7 +125,7 @@ def process_one_doc(article, articleId):
     doc = nlp(text)
 
     sentId = 0
-    for sent in doc.sents:
+    for sent in doc.sents:  # seems to me doc.sents is just to separate a sentence into several parts (according to ':')
         NPs = []
         pos = []
 
@@ -144,14 +145,14 @@ def process_one_doc(article, articleId):
 
         entityMentions = []
         # For each quality phrase, check if it's NP
-        for p in phrases:
+        for p in phrases:  # phrases are always in lower case.
             for np in NPs:
                 # find if p is a substring of np
-                if np.text.find(p) != -1:
+                if np.text.lower().find(p) != -1:
                     sent_offset = sent.start
 
                     # tmp = nlp(p)
-                    p_tokens = obtain_p_tokens(p)
+                    p_tokens = obtain_p_tokens(p)  # Just to partition p into several tokens.
                     # p_tokens = [tok.text for tok in tmp]
 
                     offset = find(tokens[np.start - sent_offset:np.end - sent_offset], p_tokens)
@@ -165,7 +166,7 @@ def process_one_doc(article, articleId):
                            "end": start_offset + len(p_tokens) - 1, "type": "phrase"}
 
                     # sanity check
-                    if ent["text"] != " ".join(tokens[ent["start"]:ent["end"] + 1]):
+                    if ent["text"] != " ".join(x.lower() for x in tokens[ent["start"]:ent["end"] + 1]):
                         print("NOT MATCH", p, " ".join(tokens[ent["start"]:ent["end"] + 1]))
                         print("SENT", " ".join(tokens))
                         print("SENT2", sent.text)
@@ -200,11 +201,10 @@ def process_corpus(input_path, output_path, real_suffix):
 
 
 if __name__ == "__main__":
-    corpusName = sys.argv[1]
-    input_path = sys.argv[2]
-    output_path = sys.argv[3]
-    real_suffix = sys.argv[4]  # used to prepend for articleID
-    # input_path = "../../data/" + corpusName + "/intermediate/segmentation.txt"
-    # output_path = "../../data/" + corpusName + "/intermediate/sentences.json.spacy"
-    # real_suffix = "aa"
-    process_corpus(input_path, output_path, real_suffix)
+    parser = argparse.ArgumentParser(prog='main.py', description='')
+    parser.add_argument('-corpusName', required=False, default='sample_dataset', help='corpusName: sample_dataset or sample_wiki or wiki')
+    parser.add_argument('-input_path', required=False, default='/Users/wanzheng/Desktop/SetExpan-MultiFacet/data/sample_dataset/intermediate/segmentation.txt', help='input_path')
+    parser.add_argument('-output_path', required=False, default='/Users/wanzheng/Desktop/SetExpan-MultiFacet/data/sample_dataset/intermediate/sentences.json.spacy', help='output_path')
+    parser.add_argument('-real_suffix', required=False, default="aa", help='real_suffix: used to prepend for articleID')  # used to prepend for articleID
+    args = parser.parse_args()
+    process_corpus(args.input_path, args.output_path, args.real_suffix)

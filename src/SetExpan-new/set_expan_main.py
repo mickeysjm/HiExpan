@@ -1,4 +1,6 @@
 import argparse
+import sys
+sys.path.insert(0, '../HiExpan-new')
 from dataLoader import loadEidToEntityMap, loadFeaturesAndEidMap, loadWeightByEidAndFeatureMap, \
     loadEntityEmbedding, loadEidDocPairPPMI
 from set_expan_standalone import setExpan
@@ -35,8 +37,7 @@ if __name__ == "__main__":
     print("=== Finish loading data ...... ===")
 
     print("=== Start SetExpan ...... ===")
-    seedEidsWithConfidence = [(47843, 1.0), (35700, 1.0), (34699, 1.0), (19995, 1.0), (12396, 1.0), (14028, 1.0),
-                              (57422, 1.0), (11903, 1.0), (40423, 1.0), (2202, 1.0), (26120, 1.0), (60083, 1.0)]
+    seedEidsWithConfidence = [(8723, 1.0), (3362, 1.0), (10081, 1.0), (10320, 1.0), (7470, 1.0)]
     negativeSeedEids = set([])
     newOrderedChildrenEidsWithConfidence = setExpan(seedEidsWithConfidence, negativeSeedEids, eid2patterns,
                                                     pattern2eids, eidAndPattern2strength, eid2types, type2eids,

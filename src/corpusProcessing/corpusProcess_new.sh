@@ -30,8 +30,10 @@ cd ../tools/AutoPhrase
 make
 echo ${green}==='RAW_TRAIN:' $RAW_TRAIN===${reset}
 echo "auto_phrase.sh parameters:" $DATA $RAW_TRAIN $MIN_SUP $QUALITY_WIKI_ENTITIES $THREAD
+chmod +x ./auto_phrase.sh
 ./auto_phrase.sh $DATA $RAW_TRAIN $MIN_SUP $QUALITY_WIKI_ENTITIES $THREAD
 echo "phrasal_segmentation.sh parameters:" $DATA $RAW_TRAIN $HIGHLIGHT_MULTI $HIGHLIGHT_SINGLE $THREAD
+chmod +x ./phrasal_segmentation.sh
 ./phrasal_segmentation.sh $DATA $RAW_TRAIN $HIGHLIGHT_MULTI $HIGHLIGHT_SINGLE $THREAD
 
 if [ ! -d ../../../data/$DATA/intermediate ]; then

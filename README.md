@@ -60,4 +60,11 @@ data/$DATA
 8. **linked_results.txt**: each line has two columns (separated by a “\t” character). The first column is the entity surface name (no underscore) used as Probase linking input. The second column is the linking results. If an entity can not be linked, then the second column will simply be an empty list []. Otherwise, the second column will be a list of tuples and each tuple is (type name, linking probability). The linking probability indicates how likely an entity has the type. By analyzing this file, we can easily get how many entities are linkable to Probase. 
 
 
+## Step 3: Taxonomy Construction
 
+After obtaining all features for your corpus, you can provide seed taxonomy in **./HiExpan-new/seedLoader.py** and start running HiExpan model by the following commands:
+
+```
+$ cd ./HiExpan-new
+$ python main -data $corpus_name -taxonPrefix $taxonPrefix
+```

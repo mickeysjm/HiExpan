@@ -72,8 +72,8 @@ def save_conflict_nodes(eidsWithConflicts, eid2nodes, conflict_nodes_file_path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog='main.py', description='Run HiExpan algorithm on input data')
 
-    parser.add_argument('-data', required=True, help='CorpusName')
-    parser.add_argument('-taxonPrefix', required=True, help='Output Taxonomy Prefix')
+    parser.add_argument('-data', type=str, default="sample_dataset", help='CorpusName')
+    parser.add_argument('-taxonPrefix', type=str, default="toy", help='Output Taxonomy Prefix')
     # Model Parameters
     parser.add_argument('-max-iter-tree', type=int, default=5,
                         help='maximum iteration number of hierarchical tree expansion')
@@ -258,7 +258,6 @@ if __name__ == "__main__":
         with open(taxonomy_pickle_path, "wb") as fout:
             pickle.dump(rootNode, fout, protocol=pickle.HIGHEST_PROTOCOL)
 
-
         print("=== Starting Taxonomy Pruning at iteration %s ===" % iters)
         if args.debug:
             print("level2reference_edges:", level2reference_edges)
@@ -305,5 +304,3 @@ if __name__ == "__main__":
     with open(taxonomy_pickle_path, "wb") as fout:
         pickle.dump(rootNode, fout, protocol=pickle.HIGHEST_PROTOCOL)
     rootNode.saveToFile(taxonomy_file_path)
-
-

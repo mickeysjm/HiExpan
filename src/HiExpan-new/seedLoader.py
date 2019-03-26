@@ -49,6 +49,10 @@ def load_seeds(corpusName):
             ["digital_signal_processing", 0, ["delta_modulation"]],
             ["image_processing", 0, ["image_processing_software"]],
         ]
+    elif corpusName == "sample_dataset":
+        userInput = [
+            ["ROOT", -1, ["machine_learning", "data_mining", "database"]]
+        ]
     else:
         userInput = []
 

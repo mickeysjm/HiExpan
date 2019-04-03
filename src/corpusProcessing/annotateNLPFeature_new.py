@@ -23,7 +23,7 @@ import argparse
 DEBUG = True
 
 # INIT SpaCy
-nlp = spacy.load('en')
+nlp = spacy.load('en_core_web_sm')
 start_phrase = [{ORTH: u'<phrase>', LEMMA: u'', POS: u'START_PHRASE', TAG: u'START_PHRASE'}]
 end_phrase = [{ORTH: u'</phrase>', LEMMA: u'', POS: u'END_PHRASE', TAG: u'END_PHRASE'}]
 nlp.tokenizer.add_special_case(u'<phrase>', start_phrase)

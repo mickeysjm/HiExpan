@@ -40,17 +40,17 @@ if [ ! -d ../../../data/$DATA/intermediate ]; then
   mkdir ../../../data/$DATA/intermediate
 fi
 
-cp models/$DATA/segmentation.txt ../../../data/$DATA/intermediate/segmentation.txt
-cp models/$DATA/AutoPhrase_multi-words.txt ../../../data/$DATA/intermediate/AutoPhrase_multi-words.txt
-cp models/$DATA/AutoPhrase_single-word.txt ../../../data/$DATA/intermediate/AutoPhrase_single-word.txt
-cp models/$DATA/AutoPhrase.txt ../../../data/$DATA/intermediate/AutoPhrase.txt
+mv models/$DATA/segmentation.txt ../../../data/$DATA/intermediate/segmentation.txt
+mv models/$DATA/AutoPhrase_multi-words.txt ../../../data/$DATA/intermediate/AutoPhrase_multi-words.txt
+mv models/$DATA/AutoPhrase_single-word.txt ../../../data/$DATA/intermediate/AutoPhrase_single-word.txt
+mv models/$DATA/AutoPhrase.txt ../../../data/$DATA/intermediate/AutoPhrase.txt
 cd $path
 
 echo ${green}===Running NLP Feature Extraction===${reset}
 export OMP_NUM_THREADS=1
-#split --number=l/$THREAD ../../data/$DATA/intermediate/segmentation.txt ../../data/$DATA/intermediate/subcorpus-
-myfilesize=$(wc -c "../../data/$DATA/intermediate/segmentation.txt" | awk '{print $1}')
-split -b $(expr $myfilesize / $THREAD + 1) ../../data/$DATA/intermediate/segmentation.txt ../../data/$DATA/intermediate/subcorpus-
+split --number=l/$THREAD ../../data/$DATA/intermediate/segmentation.txt ../../data/$DATA/intermediate/subcorpus-
+# myfilesize=$(wc -c "../../data/$DATA/intermediate/segmentation.txt" | awk '{print $1}')
+# split -b $(expr $myfilesize / $THREAD + 1) ../../data/$DATA/intermediate/segmentation.txt ../../data/$DATA/intermediate/subcorpus-
 python3 multiprocess_annotateNLPFeature.py $DATA $THREAD
 cat ../../data/$DATA/intermediate/sentences.json-* > ../../data/$DATA/intermediate/sentences.json.raw
 
@@ -60,3 +60,4 @@ rm ../../data/$DATA/intermediate/sentences.json-*
 
 echo ${green}===Key Term Extraction===${reset}
 python3 keyTermExtraction.py $DATA
+rm ../../data/$DATA/intermediate/sentences.json.raw

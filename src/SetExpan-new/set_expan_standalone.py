@@ -86,8 +86,8 @@ def sim_sib(eid1, eid2, eid2patterns, pattern2eids, eidAndPattern2strength, eid2
     redundantSkipgrams = set()
     for i in skipgram_features:
         size = len(pattern2eids[i])
-    if size < FLAGS_SG_POPULARITY_LOWER or size > FLAGS_SG_POPULARITY_UPPER:
-        redundantSkipgrams.add(i)
+        if size < FLAGS_SG_POPULARITY_LOWER or size > FLAGS_SG_POPULARITY_UPPER:
+            redundantSkipgrams.add(i)
     for sg in redundantSkipgrams:
         del skipgram_features[sg]
 

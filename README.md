@@ -1,5 +1,5 @@
 # HiExpan
-The source code used for automatic taxonomy construction method HiExpan, published in KDD 2018.
+The source code used for automatic taxonomy construction method [HiExpan](http://hanj.cs.illinois.edu/pdf/kdd18_jshen.pdf), published in KDD 2018. 
 
 ## Requirments
 

@@ -10,7 +10,7 @@ def loadMap(filename):
       if line:
         seg = line.strip('\r\n').split('\t')
         entity = re.sub("_", " ", seg[0])
-        map[entity] = int(seg[1])
+        map[entity] = int(seg[-1])
   return map
 
 def writeMapToFile(map, outFilename):

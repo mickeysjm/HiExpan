@@ -25,6 +25,9 @@ with open(inputFileName) as fin, open(outputFileName, 'w') as f_corpus:
         # add whitespace between/after some punctations
         # doc = re.sub(r"([.,!:?()])", r" \1 ", doc)
 
+        # remove "\t" character
+        doc = " ".join(doc.split("\t"))
+
         # replace multiple continuous whitespace with a single whitespace
         doc = re.sub(r"\s{2,}", " ", doc)
         if not doc:

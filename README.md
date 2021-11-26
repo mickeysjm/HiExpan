@@ -68,3 +68,7 @@ After obtaining all features for your corpus, you can provide seed taxonomy in *
 $ cd ./HiExpan-new
 $ python main -data $corpus_name -taxonPrefix $taxonPrefix
 ```
+
+## Evaluation Datasets
+
+The original evaluation dataset link is expired and the new link to our original paper evaluation dataset is available at: [Google Drive](https://drive.google.com/drive/folders/1-YeoyJAu1zYckjIVPuSZVxu7X0qdfoIq?usp=sharing).
